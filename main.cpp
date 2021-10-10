@@ -1,5 +1,6 @@
 #include <iostream>
-#include "person.h"
+#include "person/person.h"
+#include "super_calc/super_calc.h"
 
 void fillPeople(std::vector<Person> &people, const int &length);
 
@@ -15,10 +16,17 @@ int main() {
 
     fillPeople(people, 10);
 
-//    outputElderThan(people);
-//    outputWithHigh(people);
+    outputElderThan(people);
+    outputWithHigh(people);
     outputMales(people);
 
+    auto sc = new SuperCalculator();
+
+    sc->ProcessJordanGauss();
+
+    std::cout << "\n\n";
+
+    sc->ProcessSeidel();
 
     return 0;
 }
